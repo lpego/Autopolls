@@ -23,8 +23,8 @@ sudo nano ~/.bashrc
 ```
 This will open the bashrc file in the nano text editor. Now add the lines to the bashrc script. NB: these must be at the TOP of your bashrc (before the 'If not running interactively'... line). 
 ```bash
-export PCAM_USER="camera login user name"
-export PCAM_PASSWORD="camera login password"
+export PCAM_USER="camera_login_user_name"
+export PCAM_PASSWORD="camera_login_password"
 ```
 After you have added these lines at the top of your bashrc script, you can save and exit by pressing CTRL+X, then selecting 'Y' (yes) when asked if you want to save the modified buffer. You will be prompted to do both of these steps in the nano editor.
 
