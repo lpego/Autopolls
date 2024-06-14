@@ -157,7 +157,7 @@ sudo chmod 777 /etc/hostname
 
 # Setup web server (for UI)
 ```bash
-sudo htpasswd -bc /etc/apache2/.htpasswd pcam $PCAM_PASSWORD
+sudo htpasswd -bc /etc/apache2/.htpasswd $PCAM_USER $PCAM_PASSWORD
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /home/pi/AP/Autopolls/services/pcam-ui.nginx /etc/nginx/sites-enabled/
 ```
