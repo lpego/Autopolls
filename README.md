@@ -96,22 +96,24 @@ pip install -e .
 pip install uwsgi
 ```
 Move latest object detection model to tfliteserve folder
-```bash
-sudo cp /home/pi/AP/Autopolls/tflite_20220630_1/ /home/pi/AP/tfliteserve/tflite_20220630_1 -r
-sudo mkdir /home/pi/AP/tfliteserve/tflite_2023/
-sudo cp /home/pi/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP24.tflite /home/pi/AP/tfliteserve/tflite_2023/ssd_single.tflite
-sudo cp /home/pi/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP24_edgetpu.tflite /home/pi/AP/tfliteserve/tflite_2023/ssd_single_edge.tflite
-sudo cp /home/pi/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP26.tflite /home/pi/AP/tfliteserve/tflite_2023/ssd_multi.tflite
-sudo cp /home/pi/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP26_edgetpu.tflite /home/pi/AP/tfliteserve/tflite_2023/ssd_multi_edge.tflite
-sudo cp /home/pi/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite.txt /home/pi/AP/tfliteserve/tflite_2023/multi.txt
-sudo cp /home/pi/AP/Autopolls/testModels/efficientDetLite1_2024_tAll_edgetpu.tflite /home/pi/AP/tfliteserve/tflite_2023/EDV1_single_e.tflite
-sudo cp /home/pi/AP/Autopolls/testModels/efficientDetLite1_2024_tAll.tflite /home/pi/AP/tfliteserve/tflite_2023/EDV1_single.tflite
-sudo cp /home/pi/AP/Autopolls/tflite_20220630_1/labels.txt /home/pi/AP/tfliteserve/tflite_2023/single.txt
 
-sudo cp /home/pi/AP/Autopolls/configs /home/pi/Desktop/configs
-sudo cp /home/pi/AP/Autopolls/pcamPreview.py /home/pi/pcamPreview.py
-sudo chmod 777 /home/pi/Desktop/configs
-sudo chmod 777 /home/pi/AP/tfliteserve/tflite_2023/
+⚠️ *this assumes you are installing TFLite stuff on your current user*
+```bash
+sudo cp /home/$USER/AP/Autopolls/tflite_20220630_1/ /home/$USER/AP/tfliteserve/tflite_20220630_1 -r
+sudo mkdir /home/$USER/AP/tfliteserve/tflite_2023/
+sudo cp /home/$USER/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP24.tflite /home/$USER/AP/tfliteserve/tflite_2023/ssd_single.tflite
+sudo cp /home/$USER/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP24_edgetpu.tflite /home/$USER/AP/tfliteserve/tflite_2023/ssd_single_edge.tflite
+sudo cp /home/$USER/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP26.tflite /home/$USER/AP/tfliteserve/tflite_2023/ssd_multi.tflite
+sudo cp /home/$USER/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite_UINT8_AP26_edgetpu.tflite /home/$USER/AP/tfliteserve/tflite_2023/ssd_multi_edge.tflite
+sudo cp /home/$USER/AP/Autopolls/testModels/ssd_mobilenetV2_fpnlite.txt /home/$USER/AP/tfliteserve/tflite_2023/multi.txt
+sudo cp /home/$USER/AP/Autopolls/testModels/efficientDetLite1_2024_tAll_edgetpu.tflite /home/$USER/AP/tfliteserve/tflite_2023/EDV1_single_e.tflite
+sudo cp /home/$USER/AP/Autopolls/testModels/efficientDetLite1_2024_tAll.tflite /home/$USER/AP/tfliteserve/tflite_2023/EDV1_single.tflite
+sudo cp /home/$USER/AP/Autopolls/tflite_20220630_1/labels.txt /home/$USER/AP/tfliteserve/tflite_2023/single.txt
+
+sudo cp /home/$USER/AP/Autopolls/configs /home/$USER/Desktop/configs
+sudo cp /home/$USER/AP/Autopolls/pcamPreview.py /home/$USER/pcamPreview.py
+sudo chmod 777 /home/$USER/Desktop/configs
+sudo chmod 777 /home/$USER/AP/tfliteserve/tflite_2023/
 ```
 Install json reading package
 ```bash
