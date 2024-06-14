@@ -159,7 +159,7 @@ sudo chmod 777 /etc/hostname
 ```bash
 sudo htpasswd -bc /etc/apache2/.htpasswd $PCAM_USER $PCAM_PASSWORD
 sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s /home/pi/AP/Autopolls/services/pcam-ui.nginx /etc/nginx/sites-enabled/
+sudo ln -s /home/$USER/AP/Autopolls/services/pcam-ui.nginx /etc/nginx/sites-enabled/
 ```
 
 # Setup systemd services
@@ -200,7 +200,7 @@ The following scripts should look for this file error and fix it.
 
 In terminal open crontab, via "crontab -e", at the bottom of the file include:
 ```
-* * * * * sudo python3 /home/pi/AP/Autopolls/mountFix.py
+* * * * * sudo python3 /home/$USER/AP/Autopolls/mountFix.py
 ```
 
 
