@@ -146,7 +146,7 @@ echo "/dev/sda1 /mnt/data auto defaults,nofail,user,uid=1000,gid=124,umask=002  
 sudo mkdir /mnt/data
 sudo mount /mnt/data
 sudo mkdir -p /mnt/data/logs
-sudo chown pi /mnt/data
+sudo chown $USER /mnt/data
 sudo chgrp ftp /mnt/data
 sudo chmod 775 /mnt/data
 ```
