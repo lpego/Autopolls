@@ -124,16 +124,17 @@ sudo apt-get install jq
 You will need a properly formatted external hard drive. These instructions will help you format your hard drive directly on the pi, but only need to be run once (i.e., if your hard drive has been previously formatted, you can skip this section). **NB this will delete all existing data on your hard drive** 
 1. Connect your external USB hard drive to the pi.
 2. The software assumes you're using an external storage drive that is initally mounted at /dev/sda1. To confirm this, check the thumbdrive mounting location using - "sudo fdisk -l" in Terminal. You should see '/dev/sda1' the 'Device' output.
-3. To format the drive as ntfs (the most tested format for AutoPollS, and which allows for >2TB volumes), first open 'fdisk' in Terminal using the following command:
+3. You will need to unmount the drive before making changes to its partitions: 'sudo umount /dev/sda1'
+4. To format the drive as ntfs (the most tested format for AutoPollS, and which allows for >2TB volumes), first open 'fdisk' in Terminal using the following command:
 ```bash
 sudo fdisk /dev/sda
 ```
-4. Type 'g': this will switch to gpt
-5. Type 'd': this will delete existing partitions, if any
-6. Type 'n': this makes a new partion that takes up all disk space. **NB use all defaults** for partition number, first sector, and last sector (i.e., hit 'enter' three time)
-7. Type 't' then  '11' when prompted for partition type: this will switch the partion type to microsoft basic data
-8. Type 'w': this writes the changes through fdisk
-9. Run the following command in Terminal to make the filesystem:
+5. Type 'g': this will switch to gpt
+6. Type 'd': this will delete existing partitions, if any
+7. Type 'n': this makes a new partion that takes up all disk space. **NB use all defaults** for partition number, first sector, and last sector (i.e., hit 'enter' three time)
+8. Type 't' then  '11' when prompted for partition type: this will switch the partion type to microsoft basic data
+9. Type 'w': this writes the changes through fdisk
+10. Run the following command in Terminal to make the filesystem:
 ```bash
 # make ntfs filesystem
 sudo mkfs.ntfs -f /dev/sda1
